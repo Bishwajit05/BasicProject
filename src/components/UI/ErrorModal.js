@@ -35,7 +35,7 @@ function ErrorModal(props) {
         <ModalOverlay
           title={props.title}
           message={props.message}
-          onClick={props.onConfirm}
+          onConfirm={props.onConfirm}
         ></ModalOverlay>,
         document.getElementById('overlay-root')
       )}
