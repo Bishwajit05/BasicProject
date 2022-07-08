@@ -16,7 +16,7 @@ function AddUsers(props) {
       return;
     }
     // console.log(enterUsername, enterAge);
-    props.onAddUser();
+    props.onAddUser(enterUsername, enterAge);
     setEnterUsername('');
     setEnterAge('');
   };

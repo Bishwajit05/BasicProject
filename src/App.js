@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { unmountComponentAtNode } from 'react-dom';
 import AddUsers from './components/Users/AddUsers';
 import UserList from './components/Users/UserList';
 
@@ -8,14 +7,17 @@ function App() {
 
   const addUserHandler = (uName, uAge) => {
     setUserList((prevUserList) => {
-      return [...prevUserList, { name: uName, age: uAge }];
+      return [
+        ...prevUserList,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
     });
   };
 
   return (
     <div>
       <AddUsers onAddUser={addUserHandler} />
-      <UserList users={[]} />
+      <UserList users={userList} />
     </div>
   );
 }
